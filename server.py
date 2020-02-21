@@ -50,8 +50,13 @@ import sys
 class MyWebServer(socketserver.BaseRequestHandler):
     def sendFile(self,f,mimetype):
         #method used to properly send html and css files with HTTP headers.
-        data = bytearray(f.read(),'utf-8')
-        length = len(data)
+        if((mimetype[0] == "text/html") or (mimetype[0] == "text/css")):
+            data = bytearray(f.read(),'utf-8')
+            length = len(data)
+        else:
+            data = bytearray(f.read())
+            length = len(data)
+                
         self.request.sendall(bytearray("HTTP/1.1 200 OK\r\nContent-Type:"+mimetype[0]+"\r\nContent-Length: " + str(length) +"\r\nConnection: Closed\r\n\r\n",'utf-8'))
         self.request.sendall(data)
     
@@ -62,7 +67,10 @@ class MyWebServer(socketserver.BaseRequestHandler):
             #this can be anything that is not a file in the root directory - as long as the open() will fail.
             self.path = "bad-path"
         try:
-            f = open(self.path,'r')
+            if(self.path.endswith(".jpg")):
+                f = open(self.path,'rb')
+            else:
+                f = open(self.path,'r')
             
         except IOError as e:
             
