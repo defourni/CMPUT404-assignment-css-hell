@@ -1,0 +1,23 @@
+body {
+    background-color: NavajoWhite;
+    box-shadow: inset 0px 0px 75px DarkOrange;
+    color: rgba(0,0,0,0.8);
+    padding: 50px;
+    font-family: 'Prata';
+}
+
+h2 {
+    font-family: 'Cinzel';
+}
+
+a:link {
+    color: Chocolate;
+}
+
+a:visited {
+    color: OrangeRed;
+}
+
+p {
+    color: rgba(0,0,0,0.6);
+}
