@@ -61,12 +61,15 @@ class MyWebServer(socketserver.BaseRequestHandler):
         self.request.sendall(data)
     
     def handleGet(self):
-        self.path = 'www' + self.reqType[1]
+        #self.path = 'www' + self.reqType[1]
+        self.path = self.reqType[1][1:]
+        #print(self.path)
         #protection from accessing other dirs
         if("/../" in self.path):
             #this can be anything that is not a file in the root directory - as long as the open() will fail.
             self.path = "bad-path"
         try:
+            print(self.path)
             if(self.path.endswith(".jpg")):
                 f = open(self.path,'rb')
             else:
@@ -75,6 +78,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
         except IOError as e:
             
             if(e.args[0] == 2): #no such file
+                print("nofile")
                 self.request.sendall(bytearray("HTTP/1.1 404 Not Found\r\nContent-Type: text/plain\r\nContent-Length: 13\r\n\r\n404 Not Found",'utf-8'))
             elif(e.args[0] == 21): #is a directory
                 #try and open index.html
