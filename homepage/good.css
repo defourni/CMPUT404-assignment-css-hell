@@ -1,0 +1,84 @@
+body {
+	
+	background-color: DarkSlateGrey;
+}
+
+h1 {
+	font-size: 300%	;
+	padding-left: 300px;
+	margin-top: 3%;
+	color: darkslategrey;
+	
+}
+
+h2 {
+	text-align:center;
+}
+
+img {
+	float:left;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+	height: 150px;
+}
+
+div {
+	margin-left: 10%;
+}
+
+.page{
+	background-color:CadetBlue;
+	margin-left: 2%;
+	margin-right: 2%;
+	padding-bottom: 2%;
+	padding-right: 2%;
+}
+
+#header {
+	float:top;
+	margin-left: 0;
+	width: 100%;
+	padding: 10px 10px;
+}
+
+#sidebar {
+	width: 15%;
+	margin-left: 0%;
+	margin-top:20px;
+	padding-top: 20px;
+	padding-left:10px;
+	padding-bottom:8.5%;
+	left:0;
+	float:left;
+	clear:left;
+	background-color: DimGrey;
+	box-shadow: 5px 5px 8px rgba(0,0,0,0.5);
+	height: 80%;
+	color: white;
+}
+
+.content{
+	background-color: white;
+	padding-left: 25px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-right: 25px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+	border-radius: 5px;
+	margin-top:2%;
+}
+
+#who_am_i{
+	margin-right: 30%;
+}
+#history{
+	margin-left: 40%;
+}
+#offer{
+	margin-right: 30%;
+}
+
+
+This work is licensed under the Creative Commons Attribution-NoDerivs 2.0 Generic License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nd/2.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Dexter Fournier - February 24, 2020
